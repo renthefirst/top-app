@@ -10,11 +10,32 @@
       {
         "allowSingleExtends": true
       }
-    ]
+    ],
+
+    // Новые правила
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/prefer-const": "error",
+    "@typescript-eslint/consistent-type-definitions": ["warn", "interface"],
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "no-var": "error",
+    "prefer-arrow-callback": "warn",
+    "prefer-template": "warn"
   },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ]
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }
